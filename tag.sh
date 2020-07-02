@@ -7,20 +7,20 @@ MAJ=${vers[0]}
 MIN=${vers[1]}
 BUG=${vers[2]}
 
-if [ $LAST_COMMIT == hotfix ]
+if [[ $LAST_COMMIT == hotfix ]]
 then
     echo "o ultimo commit veio de um $LAST_COMMIT"
     echo "$LAST_TAG"
     ((BUG+=1))
     echo "Minor Version incrementada"
-elif [ $LAST_COMMIT == feature ]
+elif [[ $LAST_COMMIT == feature ]]
 then
     echo "o ultimo commit veio de um $LAST_COMMIT"
     echo "$LAST_TAG"
     ((MIN+=1))
     BUG=0
     echo "Minor Version incrementada"
-elif [ $LAST_COMMIT == release ]
+elif [[ $LAST_COMMIT == release ]]
 then
     echo "o ultimo commit veio de um $LAST_COMMIT"
     echo "$LAST_TAG"
@@ -34,5 +34,3 @@ fi
 
 NEWTAG="$MAJ.$MIN.$BUG"
 echo "adicionando Tag: $NEWTAG";
-#git tag -a $NEWTAG -m $NEWTAG
-#git push origin $NEWTAG
