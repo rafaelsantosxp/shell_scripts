@@ -25,7 +25,7 @@ then
     echo "o ultimo commit veio de um $LAST_COMMIT"
     echo "$LAST_TAG"
     ((MAJ+=1))
-	MIN=0
+    MIN=0
     BUG=0
     echo "Major Version incrementada"
 else
