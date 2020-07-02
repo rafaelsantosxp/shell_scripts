@@ -1,5 +1,5 @@
 #!/bin/bash
-LAST_COMMIT=`git show $(git tag -l | sort -V | tail --lines=1) | grep -oh 'hotfix\|feature\|release'`
+LAST_COMMIT=`git log $(git tag -l | sort -V | tail --lines=1) | grep -oh 'hotfix\|feature\|release' | tail --lines 1`
 LAST_TAG=`git tag -l | sort -V | tail --lines=1`
 IFS='.' read -a vers <<< "$LAST_TAG"
 
