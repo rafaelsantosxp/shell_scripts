@@ -35,3 +35,4 @@ fi
 NEWTAG="$MAJ.$MIN.$BUG"
 echo "adicionando Tag: $NEWTAG";
 echo "export NEWTAG=$NEWTAG" >> tag_env.sh
+echo "export LASTTAG=$LAST_TAG" >> tag_env.sh
